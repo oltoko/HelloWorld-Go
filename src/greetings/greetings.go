@@ -33,3 +33,19 @@ func Hello(people ...Greeting) {
 		fmt.Printf(greeting, anrede, g.Name)
 	}
 }
+
+func Check(was interface{}) {
+	
+	switch value := was.(type) {
+	case nil:
+		fmt.Println("Du hast mir nichts gegeben -.-")
+	case int:
+		fmt.Printf("Dies ist ein integer mit dem Wert %v\n", value)
+	case float64:
+		fmt.Printf("Dies ist ein 64-bit float mit dem Wert %v\n", value)
+	case Greeting:
+		Hello(value);
+	default:
+		fmt.Println("Unbekannter Datentyp :'(")
+	}
+}
