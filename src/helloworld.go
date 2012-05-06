@@ -1,12 +1,17 @@
 package main 
 
-import (
-	"greetings"
-)
+import . "./greetings"
+
 func main() {
-	var world string = "Müller";
+
+	var (
+		gA Greeting = Greeting{1, "Müller"}
+		gB Greeting = Greeting{2, "Schmidt"}
+		gC Greeting = Greeting{99, "Welt"}
+	)
 	
-	greetings.Hello(2, world)
-	greetings.Cheerio(world)
+	Hello()
+	Hello(gA, gB)
+	Hello(gC)
 }
 

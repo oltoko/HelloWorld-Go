@@ -4,27 +4,28 @@ import (
 	"fmt"
 )
 
-func Hello(geschlecht int, name string) {
+type Greeting struct {
+	Geschlecht int
+	Name string
+}
+
+func Hello(people ...Greeting) {
 	
 	var anrede string
 
-	switch geschlecht {
-	default:
-		anrede = ""
-	case 1:
-		anrede = "Frau "
-	case 2:
-		anrede = "Herr "
+	for i, g := range people {
+	
+		switch g.Geschlecht {
+		default:
+			anrede = ""
+		case 1:
+			anrede = "Frau "
+		case 2:
+			anrede = "Herr "
+		}
+	
+		greeting := "(%v) Hallo, %v%v!\n"
+		
+		fmt.Printf(greeting, i, anrede, g.Name)
 	}
-
-	greeting := "Hello, %v%v!\n"
-	
-	fmt.Printf(greeting, anrede, name)
-}
-
-func Cheerio(name string) {
-
-	greeting := "Cheerio, %v!\n"
-	
-	fmt.Printf(greeting, name)
 }
