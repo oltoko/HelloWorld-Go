@@ -1,31 +1,35 @@
 package greetings
 
-import (
-	"fmt"
+import "fmt"
+
+const(
+	Unbekannt = iota
+	Weiblich
+	Maennlich
 )
 
 type Greeting struct {
 	Geschlecht int
-	Name string
+	Name       string
 }
 
 func Hello(people ...Greeting) {
-	
+
 	var anrede string
 
-	for i, g := range people {
-	
+	for _, g := range people {
+
 		switch g.Geschlecht {
 		default:
 			anrede = ""
-		case 1:
+		case Weiblich:
 			anrede = "Frau "
-		case 2:
+		case Maennlich:
 			anrede = "Herr "
 		}
-	
-		greeting := "(%v) Hallo, %v%v!\n"
-		
-		fmt.Printf(greeting, i, anrede, g.Name)
+
+		greeting := "Hallo, %v%v!\n"
+
+		fmt.Printf(greeting, anrede, g.Name)
 	}
 }

@@ -5,9 +5,9 @@ import . "./greetings"
 func main() {
 
 	var (
-		gA Greeting = Greeting{1, "Müller"}
-		gB Greeting = Greeting{2, "Schmidt"}
-		gC Greeting = Greeting{99, "Welt"}
+		gA Greeting = Greeting{Weiblich, "Müller"}
+		gB Greeting = Greeting{Maennlich, "Schmidt"}
+		gC Greeting = Greeting{Unbekannt, "Welt"}
 	)
 	
 	Hello()
