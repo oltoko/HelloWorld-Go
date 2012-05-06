@@ -4,9 +4,9 @@ import (
 	"greetings"
 )
 func main() {
-	var world string = "World";
+	var world string = "Müller";
 	
-	greetings.Hello(world)
+	greetings.Hello(2, world)
 	greetings.Cheerio(world)
 }
 
